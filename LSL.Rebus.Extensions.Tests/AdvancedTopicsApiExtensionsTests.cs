@@ -18,7 +18,7 @@ public class AdvancedTopicsApiExtensionsTests
 
         // Assert
         await fakeBus.Advanced.Topics.Received(1).Subscribe(
-            "LSL.Rebus.Extensions.Tests.AdvanacedTopicsApiExtensionsTests+MyEvent, LSL.Rebus.Extensions.Tests@MyExchange"
+            "LSL.Rebus.Extensions.Tests.AdvancedTopicsApiExtensionsTests+MyEvent, LSL.Rebus.Extensions.Tests@MyExchange"
         );
     }
 
@@ -33,11 +33,11 @@ public class AdvancedTopicsApiExtensionsTests
 
         // Assert
         await fakeBus.Advanced.Topics.Received(1).Subscribe(
-            "LSL.Rebus.Extensions.Tests.AdvanacedTopicsApiExtensionsTests+MyEvent, LSL.Rebus.Extensions.Tests@MyExchange"
+            "LSL.Rebus.Extensions.Tests.AdvancedTopicsApiExtensionsTests+MyEvent, LSL.Rebus.Extensions.Tests@MyExchange"
         );
 
         await fakeBus.Advanced.Topics.Received(1).Subscribe(
-            "LSL.Rebus.Extensions.Tests.AdvanacedTopicsApiExtensionsTests+MyOtherEvent, LSL.Rebus.Extensions.Tests@MyExchange"            
+            "LSL.Rebus.Extensions.Tests.AdvancedTopicsApiExtensionsTests+MyOtherEvent, LSL.Rebus.Extensions.Tests@MyExchange"            
         );
     }    
 
