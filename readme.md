@@ -16,10 +16,10 @@ using LSL.Rebus.Extensions
 // the bus variable used in the examples below is a Rebus IBus instance
 
 // Subscribe to "MyEvent" but routed via the exchange called "MyOtherTopicExchange"
-bus.Subscribe<MyEvent>("MyOtherTopicExchange");
+bus.Advanced.Topics.Subscribe<MyEvent>("MyOtherTopicExchange");
 
 // Subscribe to "MyEvent" and "MyOtherEvent" but routed via the exchange called "MyOtherTopicExchange"
-bus.Subscribe("MyOtherTopicExchange", new[] { typeof(MyEvent), typeof(MyOtherEvent)});
+bus.Advanced.Topics.Subscribe("MyOtherTopicExchange", new[] { typeof(MyEvent), typeof(MyOtherEvent)});
 ```
 
 Under the hood, the topic is created using the Rebus `TypeExtension` of `GetSimpleAssemblyQualifiedName` combined with the exchange name in the Rebus default format of `Topic@Exchange`
