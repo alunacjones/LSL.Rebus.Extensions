@@ -4,4 +4,22 @@
 
 # LSL.Rebus.Extensions
 
-Provide package documentation here.
+This package provides some basic extensions to Rebus.
+
+## AdvancedTopicsApiExtensions
+
+Two options allow for less string-based topics. Please see the example below for details:
+
+```csharp
+using LSL.Rebus.Extensions
+
+// the bus variable used in the examples below is a Rebus IBus instance
+
+// Subscribe to "MyEvent" but routed via the exchange called "MyOtherTopicExchange"
+bus.Subscribe<MyEvent>("MyOtherTopicExchange");
+
+// Subscribe to "MyEvent" and "MyOtherEvent" but routed via the exchange called "MyOtherTopicExchange"
+bus.Subscribe("MyOtherTopicExchange", new[] { typeof(MyEvent), typeof(MyOtherEvent)});
+```
+
+Under the hood, the topic is created using the Rebus `TypeExtension` of `GetSimpleAssemblyQualifiedName` combined with the exchange name in the Rebus default format of `Topic@Exchange`
